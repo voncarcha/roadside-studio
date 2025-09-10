@@ -8,10 +8,10 @@ import IconPhone from "./IconPhone";
 
 const Sidebar = () => {
   return (
-    <section>
+    <aside className="w-[320px] sticky top-[60px] self-start">
       <header>
         <div className="flex items-center gap-2">
-          <Image src="/logo.png" alt="logo" width={100} height={100} />
+          <Image src="/images/logo.png" alt="logo" width={100} height={100} />
           <LogoText />
         </div>
         <article className="mt-[42px]">
@@ -40,7 +40,7 @@ const Sidebar = () => {
               Affordable session rates
             </li>
           </ul>
-          <nav className="mt-[42px] flex flex-col gap-4">
+          <nav className="mt-[42px] flex flex-col gap-2">
             <a
               target="_blank"
               href="https://www.facebook.com/profile.php?id=100068199806701"
@@ -71,12 +71,14 @@ const Sidebar = () => {
               <span>General Trias, Cavite</span>
             </a>
           </nav>
-          <footer className="mt-[62px] text-[14px]">
-            <span className="opacity-60">© 2025 Roadside Studio. All rights reserved.</span>
-          </footer>
         </article>
       </header>
-    </section>
+      <footer className="mt-[62px] text-[14px]">
+        <span className="opacity-60">
+          © 2025 Roadside Studio. All rights reserved.
+        </span>
+      </footer>
+    </aside>
   );
 };
 
