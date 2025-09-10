@@ -39,7 +39,7 @@ const Thumbnail = () => {
 
   useEffect(() => {
     // Set initial state for all images - hidden
-    gsap.set(".animate-image", { opacity: 0, y: -100 });
+    gsap.set(".animate-image", { opacity: 0, y: 100 });
 
     // Animate left column images with stagger
     const leftImages = document.querySelectorAll("#leftSection .animate-image");

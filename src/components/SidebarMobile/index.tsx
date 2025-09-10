@@ -1,12 +1,24 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 const SidebarMobile = () => {
+  const isAtPageTop = useScrollPosition(); // No targetId = check page top
+
   return (
-    <section className="w-full h-[80px] mb-6 sticky top-[20px] self-start lg:hidden z-50 hidden">
+    <section className={`w-full h-[80px] mb-6 sticky top-[20px] self-start lg:hidden z-50 transition-opacity duration-300 ${!isAtPageTop ? "block" : "hidden"}`}>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Image src="/images/logo.png" alt="logo" width={60} height={60} />
+          <Image 
+            src="/images/logo.png" 
+            alt="logo" 
+            width={60} 
+            height={60} 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="cursor-pointer"
+          />
         </div>
 
         <a
