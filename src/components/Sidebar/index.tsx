@@ -8,14 +8,14 @@ import IconPhone from "./IconPhone";
 
 const Sidebar = () => {
   return (
-    <aside className="w-[320px] sticky top-[60px] self-start">
+    <aside className="w-full lg:w-[320px] lg:sticky lg:top-[60px] self-start">
       <header>
         <div className="flex items-center gap-2">
           <Image src="/images/logo.png" alt="logo" width={100} height={100} />
           <LogoText />
         </div>
         <article className="mt-[42px]">
-          <h1 className="text-[21px] max-w-[320px]">
+          <h1 className="text-[21px] lg:max-w-[320px]">
             Looking for the perfect cozy place to jam, and rehearse with your
             friends?
           </h1>
@@ -32,18 +32,18 @@ const Sidebar = () => {
           <ul className="mt-4 flex flex-col gap-2">
             <li className="flex items-center gap-2">
               <IconCheck />
-              Play with quality instruments
+              Play with quality instruments.
             </li>
             <li className="flex items-center gap-2">
               <IconCheck />
-              Enjoy a spacious setup
+              Enjoy a spacious setup.
             </li>
             <li className="flex items-center gap-2">
               <IconCheck />
-              All at affordable session rates
+              All at affordable session rates.
             </li>
           </ul>
-          <nav className="mt-[42px] flex flex-col gap-2">
+          <nav className="mt-[42px] mb-[62px] flex flex-col gap-2">
             <a
               target="_blank"
               href="https://www.facebook.com/profile.php?id=100068199806701"
@@ -76,7 +76,7 @@ const Sidebar = () => {
           </nav>
         </article>
       </header>
-      <footer className="mt-[62px] text-[14px]">
+      <footer className="text-[14px] lg:block hidden">
         <span className="opacity-60">
           © 2025 Roadside Studio. All rights reserved.
         </span>

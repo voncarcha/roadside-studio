@@ -81,11 +81,11 @@ const Thumbnail = () => {
   }, []);
 
   return (
-    <div className="flex-1 ml-[40px] pb-[100px]">
-      <div className="flex gap-8">
+    <div className="flex-1 lg:ml-[40px] pb-[50px] lg:pb-[100px]" id="gallery-content">
+      <div className="flex gap-4 lg:gap-8">
         <section
           ref={leftSectionRef}
-          className="flex-1 flex flex-col gap-8"
+          className="flex-1 flex flex-col gap-4 lg:gap-8"
           id="leftSection"
         >
           {LEFT_IMAGES.map((image, index) => (
@@ -103,7 +103,7 @@ const Thumbnail = () => {
         </section>
         <section
           ref={rightSectionRef}
-          className="flex-1 flex flex-col gap-8"
+          className="flex-1 flex flex-col gap-4 lg:gap-8"
           id="rightSection"
         >
           {RIGHT_IMAGES.map((image, index) => (
