@@ -7,17 +7,25 @@ import { animateWithGsap } from "@/utils/animateWithGsap";
 
 // Image constants
 const LEFT_IMAGES = [
-  { src: "/images/left-thumb-1.png", alt: "Content 1" },
-  { src: "/images/left-thumb-2.png", alt: "Content 2" },
-  { src: "/images/left-thumb-3.png", alt: "Content 3" },
-  { src: "/images/left-thumb-4.png", alt: "Content 4" },
+  { src: "/images/left-thumb-1.png", alt: "Thumbnail 1" },
+  { src: "/images/left-thumb-6.png", alt: "Thumbnail 6" },
+  { src: "/images/left-thumb-2.png", alt: "Thumbnail 2" },
+  { src: "/images/left-thumb-7.png", alt: "Thumbnail 7" },
+  { src: "/images/left-thumb-3.png", alt: "Thumbnail 3" },
+  { src: "/images/left-thumb-4.png", alt: "Thumbnail 4" },
+  { src: "/images/left-thumb-5.png", alt: "Thumbnail 5" },
+  { src: "/images/left-thumb-8.png", alt: "Thumbnail 8" },
 ];
 
 const RIGHT_IMAGES = [
-  { src: "/images/right-thumb-1.png", alt: "Content 1" },
-  { src: "/images/right-thumb-2.png", alt: "Content 2" },
-  { src: "/images/right-thumb-3.png", alt: "Content 3" },
-  { src: "/images/right-thumb-4.png", alt: "Content 4" },
+  { src: "/images/right-thumb-8.png", alt: "Thumbnail 4" },
+  { src: "/images/right-thumb-1.png", alt: "Thumbnail 1" },
+  { src: "/images/right-thumb-2.png", alt: "Thumbnail 2" },
+  { src: "/images/right-thumb-3.png", alt: "Thumbnail 3" },
+  { src: "/images/right-thumb-7.png", alt: "Thumbnail 4" },
+  { src: "/images/right-thumb-4.png", alt: "Thumbnail 4" },
+  { src: "/images/right-thumb-5.png", alt: "Thumbnail 4" },
+  { src: "/images/right-thumb-6.png", alt: "Thumbnail 4" },
 ];
 
 const IMAGE_DIMENSIONS = {
@@ -25,7 +33,7 @@ const IMAGE_DIMENSIONS = {
   height: 603,
 };
 
-const Content = () => {
+const Thumbnail = () => {
   const leftSectionRef = useRef<HTMLElement>(null);
   const rightSectionRef = useRef<HTMLElement>(null);
 
@@ -46,7 +54,7 @@ const Content = () => {
           delay: index * 0.15, // Stagger delay based on left column index
         },
         {
-          start: "top 85%",
+          start: "top bottom",
         }
       );
     });
@@ -66,14 +74,14 @@ const Content = () => {
           delay: index * 0.15, // Stagger delay based on right column index
         },
         {
-          start: "top 85%",
+          start: "top bottom",
         }
       );
     });
   }, []);
 
   return (
-    <div className="flex-1 ml-[40px]">
+    <div className="flex-1 ml-[40px] pb-[100px]">
       <div className="flex gap-8">
         <section
           ref={leftSectionRef}
@@ -89,6 +97,7 @@ const Content = () => {
               height={IMAGE_DIMENSIONS.height}
               className="animate-image"
               style={{ opacity: 0 }}
+              quality={100}
             />
           ))}
         </section>
@@ -114,4 +123,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default Thumbnail;

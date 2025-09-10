@@ -22,22 +22,25 @@ const Sidebar = () => {
           <a
             target="_blank"
             href="https://docs.google.com/forms/d/e/1FAIpQLScU_EB12I7P8TRlME4ZfUOYp0nbnPEKKc00w2UihEbTtbesVQ/viewform?fbclid=IwY2xjawMuK81leHRuA2FlbQIxMABicmlkETEwY09UZnJYQmQzTnhtamtUAR7BRSordWJ5PXk_mtWMQPs1htXCbws5dyF0xh-zq50EyOvYc2c-NWS4FECHFw_aem_dX_XhJ6xPM1pTDzsTg2yAg"
-            className="flex items-center justify-center mt-[24px] text-[14px] w-[184px] font-bold hover:bg-gradient-to-l bg-gradient-to-r from-[#9E1717] to-[#7C0D0D] text-[#fff] px-[16px] h-[40px] rounded-full"
+            className="flex uppercase max-w-[300px] items-center justify-center mt-[24px] text-[14px] font-bold hover:bg-gradient-to-l bg-gradient-to-r from-[#9E1717] to-[#7C0D0D] text-[#fff] px-[16px] h-[40px] rounded-full"
           >
-            BOOK NOW
+            Book now and make some noise!
           </a>
-          <ul className="mt-[42px] flex flex-col gap-2">
+          <h2 className="text-[16px] mt-11">
+            Your cozy space for music, creativity, and good vibes.
+          </h2>
+          <ul className="mt-4 flex flex-col gap-2">
             <li className="flex items-center gap-2">
               <IconCheck />
-              Quality music instruments
+              Play with quality instruments
             </li>
             <li className="flex items-center gap-2">
               <IconCheck />
-              Spacious
+              Enjoy a spacious setup
             </li>
             <li className="flex items-center gap-2">
               <IconCheck />
-              Affordable session rates
+              All at affordable session rates
             </li>
           </ul>
           <nav className="mt-[42px] flex flex-col gap-2">
