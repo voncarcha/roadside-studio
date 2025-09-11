@@ -3,7 +3,11 @@
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { animateWithGsap } from "@/utils/animateWithGsap";
+import { usePreloaderContext } from "@/app/ClientLayout";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Image constants
 const LEFT_IMAGES = [
@@ -36,49 +40,73 @@ const IMAGE_DIMENSIONS = {
 const Thumbnail = () => {
   const leftSectionRef = useRef<HTMLElement>(null);
   const rightSectionRef = useRef<HTMLElement>(null);
+  const { isPreloaderComplete } = usePreloaderContext();
 
-  useEffect(() => {
+  const initializeAnimations = () => {
+    console.log("Initializing GSAP animations");
+    
+    // Clear any existing ScrollTriggers
+    ScrollTrigger.killAll();
+    
     // Set initial state for all images - hidden
     gsap.set(".animate-image", { opacity: 0, y: 100 });
 
-    // Animate left column images with stagger
-    const leftImages = document.querySelectorAll("#leftSection .animate-image");
-    leftImages.forEach((image, index) => {
-      animateWithGsap(
-        image,
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: index * 0.15, // Stagger delay based on left column index
-        },
-        {
-          start: "top bottom",
-        }
-      );
-    });
+    // Small delay to ensure DOM is settled
+    setTimeout(() => {
+      // Animate left column images with stagger
+      const leftImages = document.querySelectorAll("#leftSection .animate-image");
+      leftImages.forEach((image, index) => {
+        animateWithGsap(
+          image,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: index * 0.15, // Stagger delay based on left column index
+          },
+          {
+            start: "top bottom",
+          }
+        );
+      });
 
-    // Animate right column images with stagger (starting from 0)
-    const rightImages = document.querySelectorAll(
-      "#rightSection .animate-image"
-    );
-    rightImages.forEach((image, index) => {
-      animateWithGsap(
-        image,
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: index * 0.15, // Stagger delay based on right column index
-        },
-        {
-          start: "top bottom",
-        }
+      // Animate right column images with stagger (starting from 0)
+      const rightImages = document.querySelectorAll(
+        "#rightSection .animate-image"
       );
-    });
-  }, []);
+      rightImages.forEach((image, index) => {
+        animateWithGsap(
+          image,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: index * 0.15, // Stagger delay based on right column index
+          },
+          {
+            start: "top bottom",
+          }
+        );
+      });
+
+      // Refresh ScrollTrigger to recalculate positions
+      ScrollTrigger.refresh();
+      console.log("GSAP animations initialized and ScrollTrigger refreshed");
+    }, 200);
+  };
+
+  useEffect(() => {
+    if (isPreloaderComplete) {
+      initializeAnimations();
+    }
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.killAll();
+    };
+  }, [isPreloaderComplete]);
 
   return (
     <div className="flex-1 lg:ml-[40px] pb-[50px] lg:pb-[100px]" id="gallery-content">
