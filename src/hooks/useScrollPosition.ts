@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from "react";
 
-export const useScrollPosition = (targetId?: string) => {
-  const [isAtTop, setIsAtTop] = useState(targetId ? false : true); // Hidden initially when checking target element
+export const useScrollPosition = (targetId?: string, scrollOffset?: number) => {
+  const [isAtTop, setIsAtTop] = useState(targetId ? false : scrollOffset ? false : true); // Hidden initially when checking target element or scroll offset
 
   useEffect(() => {
     const handleScroll = () => {
-      if (targetId) {
+      if (scrollOffset !== undefined) {
+        // Check if scroll position is past the specified offset
+        setIsAtTop(window.scrollY >= scrollOffset);
+      } else if (targetId) {
         // Original behavior - check if target element is at top
         const targetElement = document.getElementById(targetId);
         if (!targetElement) return;
@@ -31,7 +34,7 @@ export const useScrollPosition = (targetId?: string) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [targetId]);
+    }, [targetId, scrollOffset]);
 
   return isAtTop;
 };

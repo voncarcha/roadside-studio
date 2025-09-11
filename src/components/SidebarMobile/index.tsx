@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 const SidebarMobile = () => {
-  const isGalleryAtTop = useScrollPosition("gallery-content"); // Check if gallery is at top
+  const isScrolledPast300 = useScrollPosition(undefined, 300); // Check if scrolled past 300px
 
   return (
-    <section className={`w-full h-[80px] mb-6 sticky top-[20px] self-start lg:hidden z-50 transition-opacity duration-300 ${isGalleryAtTop ? "block" : "hidden"}`}>
+    <section className={`w-full h-[80px] mb-6 sticky top-[20px] self-start lg:hidden z-50 transition-opacity duration-300 ${isScrolledPast300 ? "block" : "hidden"}`}>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Image 
