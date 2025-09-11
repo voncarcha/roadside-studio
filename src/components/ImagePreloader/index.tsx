@@ -147,10 +147,10 @@ const ImagePreloader: React.FC<ImagePreloaderProps> = ({ children, onLoadingComp
               </div>
             </div>
             
-            <div className="flex justify-between items-center text-sm">
-              <p className="text-gray-400 font-medium">
+            <div className="flex justify-center items-center text-sm">
+              {/* <p className="text-gray-400 font-medium">
                 {loadedImages} / {totalImages} images
-              </p>
+              </p> */}
               <p className="text-white font-semibold">
                 {Math.round(progressPercentage)}%
               </p>

@@ -11,13 +11,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Roadside Studio - Band Rehearsal Studio",
+  title: "Roadside Studio - Band Rehearsal and Music Production",
   description:
     "Professional music recording studio offering high-quality recording sessions, jam spaces, and music production services. Perfect for bands, solo artists, and musicians looking to create their next hit.",
   keywords:
     "music studio, recording studio, jam sessions, band recording, music production, rehearsal space, audio recording, mixing, mastering",
   openGraph: {
-    title: "Roadside Studio - Band Rehearsal Studio",
+    title: "Roadside Studio - Band Rehearsal and Music Production",
     description:
       "Professional music recording studio offering high-quality recording sessions, jam spaces, and music production services. Perfect for bands, solo artists, and musicians looking to create their next hit.",
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Roadside Studio - Band Rehearsal Studio",
+    title: "Roadside Studio - Band Rehearsal and Music Production",
     description:
       "Professional music recording studio offering high-quality recording sessions, jam spaces, and music production services. Perfect for bands, solo artists, and musicians looking to create their next hit.",
   },
