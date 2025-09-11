@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export const useScrollPosition = (targetId?: string) => {
-  const [isAtTop, setIsAtTop] = useState(true); // Start as true since we begin at top
+  const [isAtTop, setIsAtTop] = useState(targetId ? false : true); // Hidden initially when checking target element
 
   useEffect(() => {
     const handleScroll = () => {
