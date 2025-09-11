@@ -118,28 +118,28 @@ const ImagePreloader: React.FC<ImagePreloaderProps> = ({ children, onLoadingComp
   if (isLoading) {
     return (
       <div className={`fixed inset-0 bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center z-50 transition-opacity duration-700 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-        <div className="text-center text-white animate-pulse">
-          <div className="mb-12">
+        <div className="text-center text-white animate-pulse px-4 sm:px-6 md:px-8 w-full max-w-lg mx-auto">
+          <div className="mb-8 sm:mb-12">
             {/* Enhanced spinner with multiple rotating elements */}
-            <div className="relative w-20 h-20 mx-auto mb-6">
-              <div className="absolute inset-0 border-4 border-white/20 rounded-full"></div>
-              <div className="absolute inset-0 border-4 border-transparent border-t-[#9E1717] border-r-[#9E1717] rounded-full animate-spin"></div>
-              <div className="absolute inset-2 border-2 border-transparent border-t-white border-r-white rounded-full animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6">
+              <div className="absolute inset-0 border-3 sm:border-4 border-white/20 rounded-full"></div>
+              <div className="absolute inset-0 border-3 sm:border-4 border-transparent border-t-[#9E1717] border-r-[#9E1717] rounded-full animate-spin"></div>
+              <div className="absolute inset-1 sm:inset-2 border-2 border-transparent border-t-white border-r-white rounded-full animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
             </div>
             
-            <h2 className="text-3xl font-bold mb-3 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent px-2">
               Loading Roadside Studio
             </h2>
-            <p className="text-gray-300 text-lg font-light tracking-wide">
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light tracking-wide px-2">
               Preparing your music experience...
             </p>
           </div>
           
-          <div className="w-96 mx-auto">
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto px-4">
             {/* Enhanced progress bar */}
-            <div className="bg-gray-800 rounded-full h-3 mb-3 shadow-inner border border-gray-700">
+            <div className="bg-gray-800 rounded-full h-2 sm:h-3 mb-2 sm:mb-3 shadow-inner border border-gray-700">
               <div 
-                className="bg-gradient-to-r from-[#9E1717] via-[#C41E1E] to-[#7C0D0D] h-3 rounded-full transition-all duration-500 ease-out shadow-lg relative overflow-hidden"
+                className="bg-gradient-to-r from-[#9E1717] via-[#C41E1E] to-[#7C0D0D] h-2 sm:h-3 rounded-full transition-all duration-500 ease-out shadow-lg relative overflow-hidden"
                 style={{ width: `${progressPercentage}%` }}
               >
                 {/* Animated shine effect */}
@@ -147,7 +147,7 @@ const ImagePreloader: React.FC<ImagePreloaderProps> = ({ children, onLoadingComp
               </div>
             </div>
             
-            <div className="flex justify-center items-center text-sm">
+            <div className="flex justify-center items-center text-xs sm:text-sm">
               {/* <p className="text-gray-400 font-medium">
                 {loadedImages} / {totalImages} images
               </p> */}
@@ -157,10 +157,10 @@ const ImagePreloader: React.FC<ImagePreloaderProps> = ({ children, onLoadingComp
             </div>
             
             {/* Loading dots indicator */}
-            <div className="flex justify-center mt-4 space-x-1">
-              <div className="w-2 h-2 bg-[#9E1717] rounded-full animate-bounce"></div>
-              <div className="w-2 h-2 bg-[#9E1717] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-              <div className="w-2 h-2 bg-[#9E1717] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="flex justify-center mt-3 sm:mt-4 space-x-1">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#9E1717] rounded-full animate-bounce"></div>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#9E1717] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#9E1717] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
             </div>
           </div>
         </div>

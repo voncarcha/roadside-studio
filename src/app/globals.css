@@ -39,3 +39,8 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+/* Custom border width for mobile spinner */
+.border-3 {
+  border-width: 3px;
+}
